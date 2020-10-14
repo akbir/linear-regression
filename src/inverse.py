@@ -33,7 +33,7 @@ def reduced_row_echelon_form(A, num_rows, num_columns):
 
         A[[i, r]] = A[[r, i]]
         if A[r, lead] != 0:
-            A[r] /= A[r,lead]
+            A[r] /= A[r, lead]
 
         for i in range(num_rows):
             if i != r:
