@@ -7,8 +7,9 @@ def invert_matrix(A: np.ndarray) -> np.ndarray:
 
     # append identity matrix (now m x 2n)
     A = np.concatenate([A, np.eye(m, n)], axis=-1)
-
     rref = reduced_row_echelon_form(A, m, n)
+    if not rref[:, :n].any(axis=1).all():
+        raise ValueError("Non singular matrix")
     return rref[:, n:]
 
 

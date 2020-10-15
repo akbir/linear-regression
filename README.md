@@ -10,9 +10,15 @@ Project uses `Python3.8.0`
 
 # Development
 
-We use `pytest` for running tests and custom development requirements:
+We use `pytest` for running tests and offer integration tests behind a flag:
 
 ```
 pip install -r development-requirements.tv
+
+# Run unittests
 python -m pytest test/
+
+# Run integration tests
+python -m pytest test -m integration
+
 ```
