@@ -15,7 +15,7 @@ class LinearRegressor(BaseEstimator):
         self._fit = False
         super().__init__()
 
-    def fit(self, x: np.ndarray, y: np.ndarray) -> float:
+    def fit(self, x: np.ndarray, y: np.ndarray) -> None:
         if x.shape[0] != y.shape[0]:
             raise ValueError("Num samples of x and y do not match")
         x = self._add_bias(x)
@@ -23,7 +23,6 @@ class LinearRegressor(BaseEstimator):
         inv_normal = invert_matrix(normal)
         moment = np.matmul(x.T, y)
         self.set_params(weights=np.matmul(inv_normal, moment))
-        # return score
         self._fit = True
 
     def predict(self, x: np.ndarray) -> np.ndarray:
