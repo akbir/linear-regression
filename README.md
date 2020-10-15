@@ -38,9 +38,9 @@ We use `pytest` for running tests and offer integration tests behind a flag:
 pip install -r development-requirements.tv
 
 # Run unittests
-python -m pytest test/
+python -m pytest
 
 # Run integration tests
-python -m pytest test -m integration
+python -m pytest -m integration
 
 ```
