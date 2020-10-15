@@ -9,8 +9,9 @@ class LinearRegressor(BaseEstimator):
     A linear regression algorithm to model the relationship between two variables by fitting a linear equation to observed data.
     Currently supports data being off-centered (does not normalise data).
     """
-    def __init__(self):
-        self._weights = None
+
+    def __init__(self, weights: np.ndarray = None):
+        self._weights = weights
         self._fit = False
         super().__init__()
 
@@ -19,7 +20,6 @@ class LinearRegressor(BaseEstimator):
             raise ValueError("Shape of x and y do not match")
         x = self._add_bias(x)
         normal = np.matmul(x.T, x)
-        #ToDo: check for non-invertable
         inv_normal = invert_matrix(normal)
         moment = np.matmul(x.T, y)
         self._weights = np.matmul(inv_normal, moment)
@@ -36,6 +36,5 @@ class LinearRegressor(BaseEstimator):
                              f"feature size {p}")
         return np.dot(x, self._weights)
 
-
     def _add_bias(self, x: np.array):
-        return np.concatenate([np.ones((x.shape[0],1)), x], axis=1)
+        return np.concatenate([np.ones((x.shape[0], 1)), x], axis=1)

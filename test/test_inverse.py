@@ -1,6 +1,6 @@
 import numpy as np
 from src.inverse import invert_matrix, reduced_row_echelon_form
-
+import pytest
 
 def test_simple_matrix():
     x = np.array([[1, 2], [3, 4]])
@@ -10,11 +10,11 @@ def test_simple_matrix():
     assert (x_inv == ans).all()
 
 def test_non_invertable():
-    pass
+    x = np.array([[1,0,0],[0,1,0],[0,0,0]])
+    with pytest.raises(ValueError) as e:
+        invert_matrix(x)
+    assert str(e.value) == 'Non singular matrix'
 
-
-def test_parity():
-    pass
 
 def test_rref():
     x = np.asarray([[1., 2., -1., -4.],

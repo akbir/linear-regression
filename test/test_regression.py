@@ -18,18 +18,12 @@ def _create_linear_values(num_samples, feature_size, coefficient, bias):
                           (1, 1, 5, 10),
                           ]
                          )
-def test_full_regression(num_samples, features, coefficient, bias):
+def test_linear_regression(num_samples, features, coefficient, bias):
     x, y = _create_linear_values(num_samples, features, coefficient, bias)
     model = LinearRegressor()
     model.fit(x, y)
-
     y_bar = model.predict(x)
     np.testing.assert_almost_equal(y_bar, y, decimal=6)
-
-
-def test_base_estimator_func():
-    model = LinearRegressor(fit_intercept=False)
-    params = model.get_params()
 
 @pytest.mark.parametrize('num_samples,features,coeff,bias',
                          [(20, 10, 3, 0),
@@ -81,9 +75,11 @@ def test_predict_before_train_error():
     assert str(e.value) == 'Model has not been fit yet, run .fit() first'
 
 
-def test_catch_non_invertable():
-    x, y = _create_linear_values(3, 3, 5, 0.5)
+def test_base_estimator():
     model = LinearRegressor()
-    model.fit(x,y)
+    params = model.get_params()
+    assert params == {'weights': None}
 
-
+    model.set_params(weights=5)
+    assert model.get_params() == {'weights': 5}
+    assert model._weights == 5
