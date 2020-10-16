@@ -76,8 +76,11 @@ with expected response
 ```
 
 ### Docker
-
-
+We can also serve our app in a clean docker container!
+```
+docker build -t lr:latest .
+docker run -d -p 5000:8000 test:latest
+```
 
 
 # Development
