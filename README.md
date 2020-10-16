@@ -44,10 +44,10 @@ model.predict(np.array([[3,5]]))
 
 ### Web App
 
-Given a port run the following to start a Python Web App exposed on port `8000`:
+Given a port run the following to start a Python Web App exposed on port `5000`:
 
 ```bash
-python app.py --port 8000 
+python app.py --port 5000 
 
  * Serving Flask app "app" (lazy loading)
  * Environment: production

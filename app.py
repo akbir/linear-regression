@@ -29,4 +29,3 @@ if __name__ == '__main__':
     print(pathlib.Path.cwd())
     model = joblib.load('models/model.pkl')
     app.run(debug=True)
-
