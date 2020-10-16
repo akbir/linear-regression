@@ -67,19 +67,12 @@ The app currently serves the following endpoints:
 with expected response
 
 ```
-
-HTTP/1.0 200 OK
-Content-Type: application/json
-Content-Length: 66
-Server: Werkzeug/1.0.1 Python/3.8.0
-
 {
   "prediction": [
     "[0.30583531]", 
     "[1.77134556]"
   ]
 }
-
 ```
 
 ### Docker
