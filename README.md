@@ -34,10 +34,12 @@ from main.linear_regression import LinearRegressor
 X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
 # y = 1 * x_0 + 2 * x_1 + 3
 y = np.dot(X, np.array([1, 2])) + 3
-model = LinearRegressor()
 
+model = LinearRegressor()
 model.fit(X, y)
-predictions = model.predict(np.array([[3,5]]))
+
+model.predict(np.array([[3,5]]))
+# [[16.]]
 ```
 
 ### Web App
