@@ -18,12 +18,12 @@ pip install -r requirements.txt
 
 Linear Regressor can be used in the following ways
 
-1. [Module](###Import)
-2. [Web App](###Web App)
-3. [Docker Deployment](#paragraph2)
+1. [Module](###Module)
+2. [Web App](###WebApp)
+3. [Docker Deployment](#Docker)
 
 
-###Module
+### Module
 
 Given a file `data.csv` with the format `col_num, x_1, x_2, y`, you can output the following predictions to `predictions.csv`
 
@@ -47,7 +47,7 @@ predictions = model.predict(test_x)
 np.savetxt('predictions.csv', predictions, delimiter=",")
 ```
 
-###Web App
+### Web App
 
 Given a port run the following to start a Python Web App exposed on port `8000`:
 
@@ -87,7 +87,7 @@ Server: Werkzeug/1.0.1 Python/3.8.0
 
 ```
 
-###Docker
+### Docker
 
 
 
