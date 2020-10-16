@@ -8,9 +8,9 @@ from sklearn.linear_model import LinearRegression as Sklearn_Reg
 
 from src.linear_regression import LinearRegressor
 
-
+rng = np.random.default_rng(42)
 def _create_linear_values(num_samples, feature_size, coefficient, bias):
-    x = np.random.rand(num_samples, feature_size)
+    x = rng.random((num_samples, feature_size))
     y = coefficient * x + bias
     return x, y
 
