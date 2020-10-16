@@ -29,7 +29,7 @@ The module api follows that of Sklearn. For a full example check `src/train.py`
 ```python
 import numpy as np
 
-from main.linear_regression import LinearRegressor
+from src.linear_regression import LinearRegressor
 
 X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
 # y = 1 * x_0 + 2 * x_1 + 3
