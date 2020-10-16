@@ -18,8 +18,8 @@ pip install -r requirements.txt
 
 Linear Regressor can be used in the following ways
 
-1. [Module](###Module)
-2. [Web App](###WebApp)
+1. [Module](#module)
+2. [Web App](#web-app)
 3. [Docker Deployment](#Docker)
 
 
