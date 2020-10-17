@@ -44,16 +44,11 @@ model.predict(np.array([[3,5]]))
 
 ### Web App
 
-We can serve a pre-trained model as a Python Micro App.
-
-To train a model run:
-```
-python train.py
-```
-Given a port (e.g `5000`), to serve a model run the following:
+We can serve a pre-trained model (stored in `models/`) as a Python Micro App. 
+To serve a model on port `5000`, run the following:
 
 ```bash
-python app.py --port 5000 
+python app.py
 ```
 The app currently serves the following endpoints:
  
