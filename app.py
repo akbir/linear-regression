@@ -1,3 +1,4 @@
+import os
 import traceback
 
 import joblib
@@ -28,4 +29,9 @@ def predict():
 if __name__ == '__main__':
     print(pathlib.Path.cwd())
     model = joblib.load('models/model.pkl')
-    app.run(debug=True)
+    host = '127.0.0.1'
+
+    if os.environ.get('AM_I_IN_A_DOCKER_CONTAINER', False):
+        host = '0.0.0.0'
+
+    app.run(host=host, debug=True)

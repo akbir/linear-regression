@@ -44,17 +44,16 @@ model.predict(np.array([[3,5]]))
 
 ### Web App
 
-Given a port run the following to start a Python Web App exposed on port `5000`:
+We can serve a pre-trained model as a Python Micro App.
+
+To train a model run:
+```
+python train.py
+```
+Given a port (e.g `5000`), to serve a model run the following:
 
 ```bash
 python app.py --port 5000 
-
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 The app currently serves the following endpoints:
  
@@ -79,9 +78,8 @@ with expected response
 We can also serve our app in a clean docker container!
 ```
 docker build -t lr:latest .
-docker run -d -p 5000:8000 test:latest
+docker run -d -p 5000:5000 lr
 ```
-
 
 # Development
 
