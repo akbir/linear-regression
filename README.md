@@ -25,7 +25,7 @@ Linear Regressor can be used in the following ways
 
 ### Module
 
-The module api follows that of Sklearn. For a full example check `src/train.py`
+The module api follows that of Sklearn. For a full example check `examples/train.py`
 ```python
 import numpy as np
 
@@ -84,10 +84,10 @@ We use `pytest` for running unit and integration tests:
 pip install -r dev-requirements.tv
 
 # Run unittests
-python -m pytest
+python -m pytest -m "not integration"
 
-# Run integration tests
-python -m pytest -m integration
+# Run unittests and integrations tests
+python -m pytest
 
 # Coverage Report
 coverage run --source src -m pytest
