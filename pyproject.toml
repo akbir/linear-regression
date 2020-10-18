@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests for integrations (deselect with '-m \"not integration\"')",
+]
+testpaths = ["test"]
